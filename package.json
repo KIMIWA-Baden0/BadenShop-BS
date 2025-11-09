@@ -11,14 +11,12 @@
     ]
   },
   "scripts": {
-    "dev": "vite",
-    "build": "npm run build:client && npm run build:server",
-    "build:client": "vite build",
-    "build:server": "vite build --config vite.config.server.ts",
-    "start": "node dist/server/node-build.mjs",
-    "test": "vitest --run",
-    "format.fix": "prettier --write .",
-    "typecheck": "tsc"
+  "start": "node server/index.js",
+  "build:client": "vite build --config vite.config.ts",
+  "build:server": "vite build --config vite.config.server.ts",
+  "build": "pnpm run build:client && pnpm run build:server",
+  "dev": "vite",
+  "serve": "pnpm run build && pnpm run start"
   },
   "dependencies": {
     "dotenv": "^17.2.1",
